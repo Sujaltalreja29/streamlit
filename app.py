@@ -12,7 +12,8 @@ gdrive_url = 'https://drive.google.com/uc?export=download&id=1L37JmOL1-hSBXGlJij
 destination = 'vector.np.npy'
 
 # Download the file
-gdown.download(gdrive_url, destination, quiet=False)
+if not os.path.exists(destination):
+    gdown.download(gdrive_url, destination, quiet=False)
 
 from sklearn.metrics.pairwise import cosine_similarity
 vector = np.load(destination)
