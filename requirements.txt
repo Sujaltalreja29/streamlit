@@ -1,3 +1,4 @@
 ﻿streamlit
 requests
 gdown
+scikit-learn
