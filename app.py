@@ -15,7 +15,7 @@ destination = 'vector.np.npy'
 gdown.download(gdrive_url, destination, quiet=False)
 
 from sklearn.metrics.pairwise import cosine_similarity
-vector = np.load(destinations)
+vector = np.load(destination)
 similarity = cosine_similarity(vector)
 
 def fetch_poster(movie_id):
