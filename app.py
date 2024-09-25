@@ -3,9 +3,19 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import requests
+import gdown
+
+# Google Drive URL
+gdrive_url = 'https://drive.google.com/uc?export=download&id=1L37JmOL1-hSBXGlJij9cZ5JZvlGB92Qk'
+
+# Destination file path
+destination = 'vector.np.npy'
+
+# Download the file
+gdown.download(gdrive_url, destination, quiet=False)
 
 from sklearn.metrics.pairwise import cosine_similarity
-vector = np.load("vector.np.npy")
+vector = np.load(destinations)
 similarity = cosine_similarity(vector)
 
 def fetch_poster(movie_id):
